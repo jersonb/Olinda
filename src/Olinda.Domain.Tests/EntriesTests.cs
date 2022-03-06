@@ -12,7 +12,7 @@ namespace Olinda.Domain.Tests
             {
                 new ExpenseEntry(null, 0),
                 new IncomeEntry(null, 0)
-            }.ToArray();
+            };
             
             Assert.Equal(0, entries.Count);
         }
@@ -24,7 +24,7 @@ namespace Olinda.Domain.Tests
             {
                 new ExpenseEntry("Teste", -1),
                 new IncomeEntry("Teste", 1)
-            }.ToArray();
+            };
             
             Assert.Equal(2, entries.Count);
         }

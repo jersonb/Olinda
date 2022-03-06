@@ -1,31 +1,42 @@
+using System.Collections;
+
 namespace Olinda.Domain
 {
-    public class Entries : List<Entry>
+    public class Entries : IEnumerable<Entry>
     {
+
+        private readonly List<Entry> entries;
+        public int Count => entries.Count;
         public Entries()
-        {
-        }
+            =>  entries = new();
+        
+        private Entries(IEnumerable<Entry> entries) : this()
+            => AddRange(entries);
 
-        private Entries(Entry[] entries)
-            => AddEnties(entries);
-
-        private Entries(Entry entry)
+        private Entries(Entry entry) : this()
             => Add(entry);
 
         public static implicit operator Entries(Entry entry)
             => new Entries(entry);
 
-        public static implicit operator Entries(Entry[] entries)
+        public static implicit operator Entries(List<Entry> entries)
             => new Entries(entries);
 
-        public void AddEntry(Entry entry)
+        public void Add(Entry entry)
         {
             if (entry.IsValid())
-                base.Add(entry);
+                entries.Add(entry);
         }
 
-        public void AddEnties(Entry[] entries)
-            => base.AddRange(entries.Where(e => e.IsValid()));
+        public void AddRange(IEnumerable<Entry> entries)
+            => this.entries.AddRange(entries.Where(e => e.IsValid()));
 
+        public IEnumerator<Entry> GetEnumerator()
+            => entries.GetEnumerator();
+        
+
+        IEnumerator IEnumerable.GetEnumerator()
+            => GetEnumerator();
+        
     }
 }
