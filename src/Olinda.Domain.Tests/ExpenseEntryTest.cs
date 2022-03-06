@@ -19,10 +19,11 @@ namespace Olinda.Domain.Tests
         }
 
         [Fact]
-        public void Positive_value_shold_be_invalid()
+        public void Positive_value_converted_to_negative()
         {
             var expanse = new ExpenseEntry("Teste", 1);
-            Assert.False(expanse.IsValid());
+            Assert.True(expanse.IsValid());
+            Assert.Equal(-1, expanse.Value);
         }
 
         [Fact]
