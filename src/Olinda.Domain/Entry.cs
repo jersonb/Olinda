@@ -1,14 +1,16 @@
 namespace Olinda.Domain;
-public abstract class Entry
+public abstract class Entry : IEntry
 {
-    protected Entry(string description, decimal value, DateTime? date = null)
+    protected Entry(IEntry entry)
     {
-        Description = description;
-        Value = value;
-        date = date ?? DateTime.UtcNow;
-        Date = date.Value.Date;
+        Description = entry.Description;
+        Value = entry.Value;
+        var date = entry.Date == default ? DateTime.UtcNow.Date : entry.Date.Date;
+        Date = date;
+        EntryFont = entry.EntryFont;
     }
 
+    public EntryFont EntryFont { get; }
     public string Description { get; }
     public decimal Value { get; }
     public DateTime Date { get; }

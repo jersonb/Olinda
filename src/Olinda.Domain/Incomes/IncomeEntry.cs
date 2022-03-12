@@ -2,9 +2,15 @@ namespace Olinda.Domain.Incomes;
 
 public class IncomeEntry : Entry
 {
-    public IncomeEntry(string description, decimal value, DateTime? date = null) : base(description, value, date)
+    private IncomeEntry(IEntry entry) : base(entry)
     {
     }
-     public override bool IsValid()
+
+    public static IncomeEntry Create(EntryInput entry)
+    {
+        return new IncomeEntry(entry);
+    }
+
+    public override bool IsValid()
         => Value > 0 && base.IsValid();
 }

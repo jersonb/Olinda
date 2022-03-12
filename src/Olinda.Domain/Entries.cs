@@ -4,7 +4,6 @@ namespace Olinda.Domain;
 
 public class Entries : IEnumerable<Entry>
 {
-
     private readonly List<Entry> entries;
     public int Count => entries.Count;
     public Entries()
@@ -33,7 +32,6 @@ public class Entries : IEnumerable<Entry>
 
     public IEnumerator<Entry> GetEnumerator()
         => entries.GetEnumerator();
-
 
     IEnumerator IEnumerable.GetEnumerator()
         => GetEnumerator();
