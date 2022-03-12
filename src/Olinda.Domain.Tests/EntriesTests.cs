@@ -1,4 +1,6 @@
 using System.Collections.Generic;
+using Olinda.Domain.Expenses;
+using Olinda.Domain.Incomes;
 using Xunit;
 
 namespace Olinda.Domain.Tests

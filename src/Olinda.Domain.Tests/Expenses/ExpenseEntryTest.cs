@@ -1,3 +1,4 @@
+using Olinda.Domain.Expenses;
 using Xunit;
 
 namespace Olinda.Domain.Tests

@@ -1,6 +1,6 @@
 #nullable disable
 
-namespace Olinda.Domain
+namespace Olinda.Domain.Incomes
 {
     public class IncomeEntry : Entry
     {
