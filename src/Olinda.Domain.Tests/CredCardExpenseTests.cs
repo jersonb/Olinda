@@ -11,7 +11,7 @@ namespace Olinda.Domain.Tests
         {
             var credCardExpense = new CredCardExpense(10, new ExpenseEntry("teste", 100));
 
-            Assert.Equal(10, credCardExpense.Entries.Count);
+            Assert.Equal(10, credCardExpense.Count);
         }
 
         [Fact]
@@ -19,7 +19,7 @@ namespace Olinda.Domain.Tests
         {
             var credCardExpense = new CredCardExpense(10, new ExpenseEntry("teste", 100));
 
-            Assert.Equal(-10, credCardExpense.Entries.ElementAt(0).Value);
+            Assert.Equal(-10, credCardExpense.ElementAt(0).Value);
         }
 
 
@@ -28,8 +28,8 @@ namespace Olinda.Domain.Tests
         {
             var credCardExpense = new CredCardExpense(10, new ExpenseEntry("teste", 100));
 
-            Assert.Equal(DateTime.UtcNow.Month, credCardExpense.Entries.ElementAt(0).Date.Month);
-            Assert.Equal(DateTime.UtcNow.Month + 1, credCardExpense.Entries.ElementAt(1).Date.Month);
+            Assert.Equal(DateTime.UtcNow.Month, credCardExpense.ElementAt(0).Date.Month);
+            Assert.Equal(DateTime.UtcNow.Month + 1, credCardExpense.ElementAt(1).Date.Month);
         }
 
         [Fact]
@@ -37,8 +37,8 @@ namespace Olinda.Domain.Tests
         {
             var credCardExpense = new CredCardExpense(10, new ExpenseEntry("teste", 100));
 
-            Assert.Equal("P1 - teste", credCardExpense.Entries.ElementAt(0).Description);
-            Assert.Equal("P2 - teste", credCardExpense.Entries.ElementAt(1).Description);
+            Assert.Equal("P1 - teste", credCardExpense.ElementAt(0).Description);
+            Assert.Equal("P2 - teste", credCardExpense.ElementAt(1).Description);
         }
     }
 }
