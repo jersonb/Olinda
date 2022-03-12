@@ -4,7 +4,13 @@ namespace Olinda.Domain.Tests;
 
 public class DummyEntry : Entry
 {
-    public DummyEntry(string description, decimal value, DateTime? date = null) : base(description, value, date)
+    private DummyEntry(IEntry entry) : base(entry)
     {
+    }
+
+    public static DummyEntry Create(EntryInput entry)
+    {
+        entry.EntryFont = EntryFont.Pix;
+        return new DummyEntry(entry);
     }
 }

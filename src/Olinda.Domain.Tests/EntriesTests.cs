@@ -8,12 +8,16 @@ public class EntriesTests
     [Fact]
     public void Adding_invalid_should_count_zero()
     {
-        Entries entries = new Entries
-            {
-                new ExpenseEntry(null!, 0),
-                new IncomeEntry(null!, 0)
-            };
-
+        var input = new EntryInput
+        {
+            Value = 0,
+            Description = null
+        };
+        var entries = new Entries
+        {
+             ExpenseEntry.Create(input),
+             IncomeEntry.Create(input)
+        };
         Assert.Equal(0, entries.Count);
     }
 
@@ -21,10 +25,10 @@ public class EntriesTests
     public void Adding_invalid_should_count_two()
     {
         var entries = new Entries
-            {
-                new ExpenseEntry("Teste", -1),
-                new IncomeEntry("Teste", 1)
-            };
+        {
+            ExpenseEntry.Create(new EntryInput { Value = 1, Description = "Teste"}),
+            IncomeEntry.Create(new EntryInput { Value = 1, Description = "Teste"})
+        };
 
         Assert.Equal(2, entries.Count);
     }
