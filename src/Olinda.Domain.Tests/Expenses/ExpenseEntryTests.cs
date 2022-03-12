@@ -8,7 +8,7 @@ namespace Olinda.Domain.Tests
         [Fact]
         public void Description_null_should_be_invalid()
         {
-            var expanse = new ExpenseEntry(null, -1);
+            var expanse = new ExpenseEntry(null!, -1);
             Assert.False(expanse.IsValid());
         }
         
