@@ -10,8 +10,8 @@ public class EntriesTests
     {
         Entries entries = new Entries
             {
-                new ExpenseEntry(null, 0),
-                new IncomeEntry(null, 0)
+                new ExpenseEntry(null!, 0),
+                new IncomeEntry(null!, 0)
             };
 
         Assert.Equal(0, entries.Count);

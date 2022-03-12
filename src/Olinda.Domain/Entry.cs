@@ -13,6 +13,6 @@ public abstract class Entry
     public decimal Value { get; }
     public DateTime Date { get; }
     public virtual bool IsValid()
-        => !string.IsNullOrEmpty(Description) && Value != 0;
+        => Description != null && Description.Length > 4 && Value != 0;
 
 }
