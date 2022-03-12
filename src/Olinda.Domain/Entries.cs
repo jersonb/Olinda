@@ -6,6 +6,7 @@ public class Entries : IEnumerable<Entry>
 {
     private readonly List<Entry> entries;
     public int Count => entries.Count;
+
     public Entries()
         => entries = new();
 
@@ -16,10 +17,10 @@ public class Entries : IEnumerable<Entry>
         => Add(entry);
 
     public static implicit operator Entries(Entry entry)
-        => new Entries(entry);
+        => new(entry);
 
     public static implicit operator Entries(List<Entry> entries)
-        => new Entries(entries);
+        => new(entries);
 
     public void Add(Entry entry)
     {

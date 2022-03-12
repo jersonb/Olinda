@@ -1,5 +1,3 @@
-#nullable disable
-
 namespace Olinda.Domain.Expenses;
 
 public class CredCardExpense : Entries

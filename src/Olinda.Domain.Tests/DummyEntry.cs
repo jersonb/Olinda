@@ -1,5 +1,3 @@
-using System;
-
 namespace Olinda.Domain.Tests;
 
 public class DummyEntry : Entry

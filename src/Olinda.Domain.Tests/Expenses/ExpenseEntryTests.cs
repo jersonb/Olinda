@@ -22,7 +22,7 @@ namespace Olinda.Domain.Tests
         [Fact]
         public void Zero_value_shold_be_invalid()
         {
-             var input = new EntryInput
+            var input = new EntryInput
             {
                 Value = 0,
                 Description = "Teste"
@@ -35,7 +35,7 @@ namespace Olinda.Domain.Tests
         [Fact]
         public void Shold_be_valid()
         {
-             var input = new EntryInput
+            var input = new EntryInput
             {
                 Value = -1,
                 Description = "Teste"

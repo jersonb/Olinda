@@ -1,6 +1,6 @@
+using Olinda.Domain.Expenses;
 using System;
 using System.Linq;
-using Olinda.Domain.Expenses;
 using Xunit;
 
 namespace Olinda.Domain.Tests;
@@ -34,7 +34,6 @@ public class CredCardExpenseTests
 
         Assert.Equal(-10, credCardExpense.ElementAt(0).Value);
     }
-
 
     [Fact]
     public void Portion_month_should_be_subsequent()

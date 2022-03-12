@@ -1,6 +1,7 @@
 #nullable disable
 
 namespace Olinda.Domain;
+
 public class EntryInput : IEntry
 {
     public EntryFont EntryFont { get; set; }

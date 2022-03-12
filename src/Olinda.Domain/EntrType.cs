@@ -8,4 +8,3 @@ public enum EntryFont
     CredCard = 3,
     WalletMoney = 4,
 }
-

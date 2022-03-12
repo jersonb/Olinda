@@ -3,6 +3,7 @@ using Olinda.Domain.Incomes;
 using Xunit;
 
 namespace Olinda.Domain.Tests;
+
 public class EntriesTests
 {
     [Fact]

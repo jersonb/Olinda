@@ -7,9 +7,7 @@ public class IncomeEntry : Entry
     }
 
     public static IncomeEntry Create(EntryInput entry)
-    {
-        return new IncomeEntry(entry);
-    }
+        => new(entry);
 
     public override bool IsValid()
         => Value > 0 && base.IsValid();
