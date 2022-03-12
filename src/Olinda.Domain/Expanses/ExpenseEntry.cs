@@ -5,7 +5,7 @@ namespace Olinda.Domain.Expenses
     public class ExpenseEntry : Entry
     {
 
-        public ExpenseEntry(string description, decimal value, DateOnly? date = null) : base(description, SetNegativeValue(value), date)
+        public ExpenseEntry(string description, decimal value, DateTime? date = null) : base(description, SetNegativeValue(value), date)
         {
         }
 

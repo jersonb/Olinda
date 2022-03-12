@@ -4,18 +4,19 @@ namespace Olinda.Domain
 {
     public abstract class Entry
     {
-        protected Entry(string description, decimal value, DateOnly? date = null)
+        protected Entry(string description, decimal value, DateTime? date = null)
         {
             Description = description;
             Value = value;
-            Date = date ?? DateOnly.FromDateTime(DateTime.UtcNow);
+            date = date ?? DateTime.UtcNow;
+            Date = date.Value.Date;
         }
 
         public string Description { get; }
         public decimal Value { get; }
-        public DateOnly Date { get; }
+        public DateTime Date { get; }
         public virtual bool IsValid()
-            => !string.IsNullOrEmpty(Description);
-        
+            => !string.IsNullOrEmpty(Description) && Value != 0;
+
     }
 }

@@ -3,21 +3,8 @@ using Xunit;
 
 namespace Olinda.Domain.Tests
 {
-    public class IncomeEntryTest
+    public class IncomeEntryTests
     {
-         [Fact]
-        public void Description_null_should_be_invalid()
-        {
-            var income = new IncomeEntry(null, 1);
-            Assert.False(income.IsValid());
-        }
-        
-        [Fact]
-        public void Description_empty_should_be_invalid()
-        {
-            var income = new IncomeEntry(string.Empty, 1);
-            Assert.False(income.IsValid());
-        }
 
         [Fact]
         public void Negative_value_shold_be_invalid()

@@ -3,7 +3,7 @@ using Xunit;
 
 namespace Olinda.Domain.Tests
 {
-    public class ExpenseEntryTest
+    public class ExpenseEntryTests
     {
         [Fact]
         public void Description_null_should_be_invalid()
