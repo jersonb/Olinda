@@ -11,7 +11,8 @@ namespace Olinda.Domain.Tests
             var input = new EntryInput
             {
                 Value = 1,
-                Description = "Teste"
+                Description = "Teste",
+                EntryFont = EntryFont.Pix
             };
 
             var expanse = ExpenseEntry.Create(input);
@@ -25,7 +26,8 @@ namespace Olinda.Domain.Tests
             var input = new EntryInput
             {
                 Value = 0,
-                Description = "Teste"
+                Description = "Teste",
+                EntryFont = EntryFont.Pix
             };
 
             var expanse = ExpenseEntry.Create(input);
@@ -38,7 +40,8 @@ namespace Olinda.Domain.Tests
             var input = new EntryInput
             {
                 Value = -1,
-                Description = "Teste"
+                Description = "Teste",
+                EntryFont = EntryFont.Pix
             };
 
             var expanse = ExpenseEntry.Create(input);

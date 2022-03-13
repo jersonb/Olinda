@@ -11,7 +11,8 @@ public class IncomeEntryTests
         var input = new EntryInput
         {
             Value = -1,
-            Description = "Teste"
+            Description = "Teste",
+            EntryFont = EntryFont.TrasnferBank
         };
 
         var income = IncomeEntry.Create(input);
@@ -24,7 +25,8 @@ public class IncomeEntryTests
         var input = new EntryInput
         {
             Value = 0,
-            Description = "Teste"
+            Description = "Teste",
+            EntryFont = EntryFont.TrasnferBank
         };
 
         var income = IncomeEntry.Create(input);
@@ -37,7 +39,8 @@ public class IncomeEntryTests
         var input = new EntryInput
         {
             Value = 1,
-            Description = "Teste"
+            Description = "Teste",
+            EntryFont = EntryFont.TrasnferBank
         };
 
         var income = IncomeEntry.Create(input);

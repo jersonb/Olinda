@@ -17,5 +17,10 @@ public abstract class Entry : IEntry
     public DateTime Date { get; }
 
     public virtual bool IsValid()
-        => Description != null && Description.Length > 4 && Value != 0;
+    {
+        var descriptionOk = Description != null && Description.Length > 4;
+        var valueOk = Value != 0;
+        var entyFontOk = EntryFont != EntryFont.Default;
+        return descriptionOk && valueOk && entyFontOk;
+    }
 }
